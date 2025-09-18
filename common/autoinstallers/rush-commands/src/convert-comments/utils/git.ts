@@ -10,6 +10,9 @@ export const getGitTrackedFiles = async (
   root: string,
 ): Promise<Result<string[]>> => {
   return tryCatch(async () => {
+    if (process.env.DISABLE_GIT === '1') {
+      return [];
+    }
     const git = simpleGit(root);
     const files = await git.raw(['ls-files']);
 
@@ -27,6 +30,9 @@ export const getAllGitFiles = async (
   root: string,
 ): Promise<Result<string[]>> => {
   return tryCatch(async () => {
+    if (process.env.DISABLE_GIT === '1') {
+      return [];
+    }
     const git = simpleGit(root);
 
     // Get tracked files
@@ -56,6 +62,9 @@ export const isGitRepository = async (
   root: string,
 ): Promise<Result<boolean>> => {
   return tryCatch(async () => {
+    if (process.env.DISABLE_GIT === '1') {
+      return false;
+    }
     const git = simpleGit(root);
     await git.status();
     return true;
@@ -67,6 +76,9 @@ export const isGitRepository = async (
  */
 export const getGitRoot = async (cwd: string): Promise<Result<string>> => {
   return tryCatch(async () => {
+    if (process.env.DISABLE_GIT === '1') {
+      return '' as unknown as string;
+    }
     const git = simpleGit(cwd);
     const root = await git.revparse(['--show-toplevel']);
     return root.trim();
@@ -81,6 +93,9 @@ export const isIgnoredByGit = async (
   filePath: string,
 ): Promise<Result<boolean>> => {
   return tryCatch(async () => {
+    if (process.env.DISABLE_GIT === '1') {
+      return false;
+    }
     const git = simpleGit(root);
     const relativePath = path.relative(root, filePath);
 

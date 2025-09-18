@@ -37,7 +37,7 @@ export const LoginPage: FC = () => {
   const submitDisabled = !email || !password || hasError;
 
   return (
-    <SignFrame brandNode={<CozeBrand isOversea={IS_OVERSEA} />}>
+    <SignFrame brandNode={<></>}>
       <SignPanel className="w-[600px] h-[640px] pt-[96px]">
         <div className="flex flex-col items-center w-full h-full">
           <Favicon />
@@ -105,7 +105,7 @@ export const LoginPage: FC = () => {
             >
               {I18n.t('register')}
             </Button>
-            <div className="mt-[12px] flex justify-center">
+            {/* <div className="mt-[12px] flex justify-center">
               <a
                 data-testid="login.link.terms"
                 href="https://github.com/coze-dev/coze-studio?tab=Apache-2.0-1-ov-file"
@@ -114,7 +114,7 @@ export const LoginPage: FC = () => {
               >
                 {I18n.t('open_source_terms_linkname')}
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </SignPanel>

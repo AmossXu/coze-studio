@@ -77,10 +77,10 @@ export const ToolArea: React.FC<ToolAreaProps> = props => {
               toolGroupKey={ToolGroupKey.SKILL}
             >
               {/* tool */}
-              <PluginApisArea
+              {/* <PluginApisArea
                 toolKey={ToolKey.PLUGIN}
                 title={I18n.t('Plugins')}
-              />
+              /> */}
               {/* Workflow */}
               <WorkflowCard
                 flowMode={WorkflowMode.Workflow}
@@ -154,10 +154,10 @@ export const ToolArea: React.FC<ToolAreaProps> = props => {
                 title={I18n.t('bot_ide_shortcut')}
               />
               {/* Chat background image */}
-              <ChatBackground
+              {/* <ChatBackground
                 toolKey={ToolKey.BACKGROUND}
                 title={I18n.t('bgi_title')}
-              />
+              /> */}
               {dialogToolSlot}
             </GroupingContainer>
             {extraToolSlot}

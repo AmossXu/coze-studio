@@ -42,8 +42,8 @@ const mergedConfig = defineConfig({
     ],
   },
   html: {
-    title: '扣子 Studio',
-    favicon: './assets/favicon.png',
+    title: '诺亚',
+    favicon: './assets/kkklj.jpg',
     template: './index.html',
     crossorigin: 'anonymous',
   },

@@ -72,7 +72,7 @@ export enum BenefitHistoryType {
   WorkflowConsume = 6,
   /** 智能语音 */
   IntelligentVoice = 11,
-  /** 扣子罗盘消耗 */
+  /** 诺亚罗盘消耗 */
   Fornax = 12,
   EvaluateConsume = 41,
   EvaluateModelConsume = 42,
@@ -90,7 +90,7 @@ export enum BenefitRootHistoryType {
   ProjectConsume = 3,
   /** 智能语音 */
   IntelligentVoiceConsume = 4,
-  /** 扣子罗盘消耗 */
+  /** 诺亚罗盘消耗 */
   FornaxConsume = 5,
   /** 模型评测消耗 */
   EvaluateModelConsume = 6,
@@ -894,7 +894,7 @@ export interface VolcAccountInfo {
   is_volcano_pro_account?: boolean;
   /** 实例ID */
   instance_id?: string;
-  /** 扣子专业版是否可用（含套餐及存量专业版）。存量专业版仅返回此字段 */
+  /** 诺亚专业版是否可用（含套餐及存量专业版）。存量专业版仅返回此字段 */
   coze_instance_status?: AccountStatus;
   /** 套餐（实例）状态。仅订阅套餐返回此字段 */
   instance_status?: InstanceStatus;

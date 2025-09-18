@@ -486,7 +486,7 @@ export interface VolcAccountInfo {
   is_volcano_pro_account?: boolean;
   /** 实例ID */
   instance_id?: string;
-  /** 扣子专业版是否可用（含套餐及存量专业版）。存量专业版仅返回此字段 */
+  /** 诺亚专业版是否可用（含套餐及存量专业版）。存量专业版仅返回此字段 */
   coze_instance_status?: common.AccountStatus;
   /** 套餐（实例）状态。仅订阅套餐返回此字段 */
   instance_status?: common.InstanceStatus;

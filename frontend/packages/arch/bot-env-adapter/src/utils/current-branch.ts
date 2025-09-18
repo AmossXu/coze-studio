@@ -21,22 +21,31 @@ import { execSync } from 'child_process';
  * @Returns the current branch name, or undefined if not in the git repository or an error occurs
  */
 export function getCurrentBranch(): string | undefined {
+  // Prefer environment variables in CI / container builds
+  const envBranch =
+    process.env.BRANCH_NAME ||
+    process.env.GIT_BRANCH ||
+    process.env.CI_COMMIT_BRANCH ||
+    process.env.GITHUB_REF_NAME ||
+    process.env.BUILD_SOURCEBRANCHNAME ||
+    '';
+
+  if (envBranch.trim()) {
+    return envBranch.trim();
+  }
+
+  // Allow disabling git calls via environment variable (e.g., in Docker builds)
+  if (process.env.DISABLE_GIT === '1' || process.env.CI === 'true') {
+    return '';
+  }
+
   try {
-    // Use git rev-parse to get the current branch name
-    // --Abbrev-ref parameter returns branch name instead of commit hash
-    // HEAD represents the current location
     const branch = execSync('git rev-parse --abbrev-ref HEAD', {
       encoding: 'utf-8',
     }).trim();
-
-    // If in the detached HEAD state, return undefined
-    if (branch === 'HEAD') {
-      return undefined;
-    }
-
+    if (branch === 'HEAD') return undefined;
     return branch;
   } catch (error) {
-    // If there is an execution error (e.g. not in the git repository), return undefined.
     return '';
   }
 }

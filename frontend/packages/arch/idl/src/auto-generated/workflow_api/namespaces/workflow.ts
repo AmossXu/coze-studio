@@ -1052,7 +1052,7 @@ export interface ChatFlowRunRequest {
   version?: string;
   /** 渠道ID，比如ui builder、template、商店等 */
   connector_id?: string;
-  /** 需要关联的扣子应用 ID */
+  /** 需要关联的诺亚应用 ID */
   app_id?: string;
   /** 对话流对应的会话 ID */
   conversation_id?: string;
@@ -4101,7 +4101,7 @@ export interface WorkflowExecuteHistory {
   bot_id?: Int64;
   /** 智能体的发布渠道 ID，默认仅显示 Agent as API 渠道，渠道 ID 为 1024。 */
   connector_id?: Int64;
-  /** 用户 ID，执行工作流时通过 ext 字段指定的 user_id。如果未指定，则返回 Token 申请人的扣子 ID。 */
+  /** 用户 ID，执行工作流时通过 ext 字段指定的 user_id。如果未指定，则返回 Token 申请人的诺亚 ID。 */
   connector_uid?: string;
   /** 工作流的运行方式：0：同步运行。1：流式运行。2：异步运行。 */
   run_mode?: WorkflowRunMode;

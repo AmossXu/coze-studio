@@ -39,7 +39,7 @@ export const UILayout: React.FC<
   Footer: React.FC<UIFooterProps>;
 } = ({ className, children, title }) => {
   const { i18n } = useContext<I18nContext>(i18nContext);
-  const _title = title || i18n.t('platform_name');
+  const _title = title;
   return (
     <div className={classNames(s['ui-layout'], className)}>
       <Helmet>

@@ -128,13 +128,6 @@ const Render = ({ form }: FormRenderProps<FormData>) => {
           )}
         </Field>
         <Batch batchModeName={'batchMode'} name={'batch'} />
-        {!isBindDouyin ? (
-          <Field name="fcParam">
-            {({ field }: FieldRenderProps<BoundSkills | undefined>) => (
-              <Skills {...field} />
-            )}
-          </Field>
-        ) : null}
         <FieldArray
           name={'$$input_decorator$$.inputParameters'}
           defaultValue={[

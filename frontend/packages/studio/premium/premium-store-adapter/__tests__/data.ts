@@ -339,7 +339,7 @@ export const mockPremiumPlansCN = [
       {
         right_type_code: 'prompts',
         right_type_name: '开发调试',
-        right_type_remark: '扣子罗盘',
+        right_type_remark: '诺亚罗盘',
         right: [
           {
             right_code: 'prompts_version',

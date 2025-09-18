@@ -110,15 +110,7 @@ export const BotHeader: React.FC<BotHeaderProps> = props => {
         {/* page title */}
         <Helmet>
           <title>
-            {renderHtmlTitle(
-              pageFrom === BotPageFromEnum.Bot
-                ? I18n.t('tab_bot_detail', {
-                    bot_name: botInfo?.name ?? '',
-                  })
-                : I18n.t('tab_explore_bot_detail', {
-                    bot_name: botInfo?.name ?? '',
-                  }),
-            )}
+            诺亚
           </title>
         </Helmet>
         {/** 1. Left bot information area */}

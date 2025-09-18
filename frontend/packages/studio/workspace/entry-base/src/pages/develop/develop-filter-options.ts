@@ -52,10 +52,10 @@ export const TYPE_FILTER_OPTIONS = [
     value: DevelopCustomTypeStatus.All,
     labelI18NKey: 'filter_develop_all_types',
   },
-  {
-    value: DevelopCustomTypeStatus.Project,
-    labelI18NKey: 'filter_develop_project',
-  },
+  // {
+  //   value: DevelopCustomTypeStatus.Project,
+  //   labelI18NKey: 'filter_develop_project',
+  // },
   {
     value: DevelopCustomTypeStatus.Agent,
     labelI18NKey: 'filter_develop_agent',

@@ -18,7 +18,6 @@ import { type FC } from 'react';
 
 import classNames from 'classnames';
 import { Divider, Space } from '@coze-arch/coze-design';
-import { IconMenuLogo } from '@coze-arch/bot-icons';
 import { useRouteConfig } from '@coze-arch/bot-hooks';
 
 import { type LayoutProps } from '../types';
@@ -61,9 +60,12 @@ export const GlobalLayoutSider: FC<Omit<LayoutProps, 'hasSider'>> = ({
               'border-0 border-r-[1px] border-solid coz-stroke-primary',
           )}
         >
-          <IconMenuLogo
+          {/* use app asset kkklj.jpg as logo */}
+          <img
+            src={new URL('../../../../../../../apps/coze-studio/assets/kkklj.jpg', import.meta.url).href}
             onClick={onClickLogo}
-            className="cursor-pointer w-[40px] h-[40px]"
+            className="cursor-pointer w-[40px] h-[40px] object-cover rounded"
+            alt="logo"
           />
           <div className="mt-[16px]">
             {actions?.map((action, index) => (
